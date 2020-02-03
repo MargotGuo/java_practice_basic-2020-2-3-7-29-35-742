@@ -7,16 +7,16 @@ public class ArrayPractice3 {
      */
     public static int[] filterZero(int[] array) {
         int len = array.length;
-        int[] output = new int[len];
+        int[] temp = new int[len];
         int index = 0;
         for (int value : array) {
             if (value != 0) {
-                output[index] = value;
+                temp[index] = value;
                 index++;
             }
         }
         int[] result = new int[index];
-        System.arraycopy(output, 0, result, 0, index);
+        System.arraycopy(temp, 0, result, 0, index);
         return result;
     }
 }
