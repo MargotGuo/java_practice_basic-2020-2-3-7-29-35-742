@@ -8,16 +8,12 @@ public class ArrayPractice1 {
         printArrayReverse();
     }
 
-    /**
-     * 倒序打印给定数组,打印格式为: [3,2,1]
-     */
     public static void printArrayReverse() {
         int[] array = new int[]{1, 2, 3};
-        int[] newArray = new int[array.length];
-        int index = 0;
-        for (int i = array.length - 1; i >= 0; i--) {
-            newArray[index] = array[i];
-            index++;
+        int len = array.length;
+        int[] newArray = new int[len];
+        for (int i = 0; i < len; i++) {
+            newArray[len - i - 1] = array[i];
         }
         System.out.println(Arrays.toString(newArray));
     }
