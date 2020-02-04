@@ -1,7 +1,5 @@
 package com.thoughtworks;
 
-import java.util.Arrays;
-
 public class ArrayPractice4 {
 
     /**
@@ -13,7 +11,15 @@ public class ArrayPractice4 {
         int[] newArray = new int[len + 1];
         System.arraycopy(array, 0, newArray, 0, array.length);
         newArray[array.length] = number;
-        Arrays.sort(newArray);
+        for (int j = newArray.length; j > 0; j--) {
+            for (int i = 0; i < j - 1; i++) {
+                if (newArray[i] > newArray[i + 1]) {
+                    int temp = newArray[i];
+                    newArray[i] = newArray[i + 1];
+                    newArray[i + 1] = temp;
+                }
+            }
+        }
         return newArray;
     }
 }
