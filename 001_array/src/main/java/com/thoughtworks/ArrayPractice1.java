@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import java.util.Arrays;
+
 public class ArrayPractice1 {
 
     public static void main(String[] args) {
@@ -11,13 +13,12 @@ public class ArrayPractice1 {
      */
     public static void printArrayReverse() {
         int[] array = new int[]{1, 2, 3};
-        StringBuilder outputString = new StringBuilder();
-        outputString.append("[");
+        int[] newArray = new int[array.length];
+        int index = 0;
         for (int i = array.length - 1; i >= 0; i--) {
-            outputString.append(String.valueOf(array[i]));
-            outputString.append((i == 0) ? "" : ",");
+            newArray[index] = array[i];
+            index++;
         }
-        outputString.append("]");
-        System.out.println(outputString);
+        System.out.println(Arrays.toString(newArray));
     }
 }

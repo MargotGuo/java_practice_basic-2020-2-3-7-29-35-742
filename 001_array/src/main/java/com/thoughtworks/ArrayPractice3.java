@@ -1,5 +1,8 @@
 package com.thoughtworks;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayPractice3 {
 
     /**
@@ -15,8 +18,6 @@ public class ArrayPractice3 {
                 index++;
             }
         }
-        int[] result = new int[index];
-        System.arraycopy(temp, 0, result, 0, index);
-        return result;
+        return Arrays.copyOfRange(temp, 0, index);
     }
 }
