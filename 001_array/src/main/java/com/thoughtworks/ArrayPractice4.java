@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import java.util.Arrays;
+
 public class ArrayPractice4 {
 
     /**
@@ -7,19 +9,10 @@ public class ArrayPractice4 {
      */
     public static int[] insert(int number) {
         int[] array = new int[]{1, 20, 50, 100};
-        int len = array.length;
-        int[] newArray = new int[len + 1];
+        int[] newArray = new int[array.length + 1];
         System.arraycopy(array, 0, newArray, 0, array.length);
         newArray[array.length] = number;
-        for (int j = newArray.length; j > 0; j--) {
-            for (int i = 0; i < j - 1; i++) {
-                if (newArray[i] > newArray[i + 1]) {
-                    int temp = newArray[i];
-                    newArray[i] = newArray[i + 1];
-                    newArray[i + 1] = temp;
-                }
-            }
-        }
+        Arrays.sort(newArray);
         return newArray;
     }
 }
